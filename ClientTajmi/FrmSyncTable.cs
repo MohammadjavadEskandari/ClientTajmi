@@ -92,8 +92,8 @@ namespace ClientTajmi
 
             TxtSrvUrl.Text = Cn.TxtSrvUrl;
             TxtSrvDatabaseCnn.Text = Cn.TxtSrvDatabaseCnn;
-            TxtSrvTableName.Text = Cn.TxtSrvDatabaseCnn;
-            TxtSrvPrimaryKey.Text = Cn.TxtSrvTableName;
+            TxtSrvTableName.Text = Cn.TxtSrvTableName;
+            TxtSrvPrimaryKey.Text = Cn.TxtSrvPrimaryKey;
         }
     }
 }
