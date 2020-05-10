@@ -68,15 +68,19 @@ namespace ClientTajmi.Services
         }
         private string CreateRequestGet(string UrlApi)
         {
-            var RetData = new WebClient().DownloadString(UrlApi);
-            return RetData;
+            var RetData = new WebClient();
+            RetData.Encoding = System.Text.Encoding.UTF8;
+            var s = RetData.DownloadString(UrlApi);
+            return s;
         }
 
-        public List<GetDataViewModel> GetNewDate(string UrlService,string Cnn,string TBname,string PrimaryKey)
+        public List<GetDataViewModel> GetNewDate(string UrlService, string Cnn, string TBname, string PrimaryKey)
         {
             string Turl = UrlService + "/" + Cnn + ",'" + TBname + "'," + PrimaryKey;
-
             var data = JsonConvert.DeserializeObject<List<GetDataViewModel>>(CreateRequestGet(Turl));
+
+
+
             return data;
         }
     }
